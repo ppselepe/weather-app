@@ -5,6 +5,8 @@ const app = express();
 
 const direcotry = path.join(__dirname, '/public');
 
+const port = process.env.PORT || 3000
+
 app.use(express.static(direcotry));
 
 
@@ -42,7 +44,7 @@ app.get('/accounts', (req, res) => {
 
   // if (!req.query.AcctNo) {
   //   return res.send({
-  //     error: "Account number does not exist"
+  //     error: "Account number does not exist" 
   //   })
 
   // }
@@ -77,9 +79,9 @@ app.get('/accounts', (req, res) => {
 })
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
 
-  console.log('running on 3000');
+  console.log(`running on ${port}`);
 
 })
 
